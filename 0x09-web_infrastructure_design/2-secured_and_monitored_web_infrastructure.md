@@ -5,6 +5,9 @@ This is a 3-server web infrastructure that is secured, monitored, and serves enc
 <b>What are firewalls for?</b>
 The firewalls are for protecting the network (web servers, anyway) from unwanted and unauthorized users by acting as an intermediary between the internal network and the external network and blocking the incoming traffic matching the aforementioned criteria.
 
+<b>Why is the traffic served over HTTPS?</b>
+HTTPS is a secure version of the HTTP protocol, which is the protocol used to transfer data over the web. When a website uses HTTPS, it means that all communication between the web server and the client’s web browser is encrypted and secure. HTTPS primarily assists in protecting the privacy of users’ personal information and preventing attackers from intercepting and altering the data that is transmitted between the server and the client
+
 <b>The purpose of the SSL certificate.</b>
 The SSL certificate is for encrypting the traffic between the web servers and the external network to prevent man-in-the-middle attacks (MITM) and network sniffers from sniffing the traffic which could expose valuable information. The SSL certs ensure privacy, integrity, and identification.
 
