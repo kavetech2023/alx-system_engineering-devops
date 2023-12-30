@@ -1,7 +1,8 @@
 <h1>Description</h1>
 
 A simple web infrastructure that hosts a website, reachable via www.foobar.com. 
-There are no firewalls or SSL certificates for protecting the server's network. Each component (database, application server) has to share the resources (CPU, RAM, and SSD) provided by the server.
+Very basic: No firewalls or SSL certificates for protecting the server's network. 
+Each component (database, application server, web server) has to share the resources (CPU, RAM, and SSD) provided by the server.
 
 <h2>Specifics About This Infrastructure</h2>
 
