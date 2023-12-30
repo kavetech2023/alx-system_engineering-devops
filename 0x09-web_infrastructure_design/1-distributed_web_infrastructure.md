@@ -17,10 +17,16 @@ A Primary-Replica setup configures one server to act as the Primary server and t
 <b>The difference between the Primary node and the Replica node in regard to the application.</b>
 The Primary node is responsible for all the write operations the site needs whilst the Replica node is capable of processing read operations, which decreases the read traffic to the Primary node.
 
-<h2>Issues With This Infrastructure</h2>h2>
+<h2>Issues With This Infrastructure</h2>
+
+<b>Where are SPOF?</b>
 There are multiple SPOF (Single Point Of Failure).
 For example, if the Primary MySQL database server is down, the entire site would be unable to make changes to the site (including adding or removing users). The server containing the load balancer and the application server connecting to the primary database server are also SPOFs.
-Security issues.
+
+<b>Security issues (no firewall, no HTTPS)</b>
+
 The data transmitted over the network isn't encrypted using an SSL certificate so hackers can spy on the network. There is no way of blocking unauthorized IPs since there's no firewall installed on any server.
-No monitoring.
+
+<b>No monitoring.</b>
+
 We have no way of knowing the status of each server since they're not being monitored.
