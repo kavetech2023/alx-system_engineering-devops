@@ -3,12 +3,12 @@ This is a distributed web infrastructure that atttempts to reduce the traffic to
 
 <h2>Specifics About This Infrastructure</h2>
 
-<b>The distribution algorithm the load balancer is configured with and how it works.</b></br>
+<b>What distribution algorithm your load balancer is configured with and how it works?</b></br>
 
 The HAProxy load balancer is configured with the Round Robin distribution algorithm. This algorithm works by using each server behind the load balancer in turns, according to their weights. It’s also probably the smoothest and most fair algorithm as the servers’ processing time stays equally distributed. As a dynamic algorithm, Round Robin allows server weights to be adjusted on the go.
 The setup enabled by the load-balancer.
 
-<b>s your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both</b>
+<b>Is your load-balancer enabling an Active-Active or Active-Passive setup, explain the difference between both</b>
 The HAProxy load-balancer is enabling an Active-Passive setup rather than an Active-Active setup. In an Active-Active setup, the load balancer distributes workloads across all nodes in order to prevent any single node from getting overloaded. Because there are more nodes available to serve, there will also be a marked improvement in throughput and response times. On the other hand, in an Active-Passive setup, not all nodes are going to be active (capable of receiving workloads at all times). In the case of two nodes, for example, if the first node is already active, the second node must be passive or on standby. The second or the next passive node can become an active node if the preceding node is inactive.
 
 <b>How a database Primary-Replica (Master-Slave) cluster works.</b>
