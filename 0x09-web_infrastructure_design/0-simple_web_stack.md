@@ -5,7 +5,7 @@ There are no firewalls or SSL certificates for protecting the server's network. 
 
 <h2>Specifics About This Infrastructure</h2>
 
-<b>What a server is.\</b>
+<b>What a server is.</b>
 A server is a computer hardware or software that provides services to other computers, usually called clients.
 
 <b>The role of the domain name.</b>
