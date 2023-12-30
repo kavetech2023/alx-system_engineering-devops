@@ -3,7 +3,7 @@
 A simple web infrastructure that hosts a website, reachable via www.foobar.com. 
 There are no firewalls or SSL certificates for protecting the server's network. Each component (database, application server) has to share the resources (CPU, RAM, and SSD) provided by the server.
 
-<h1>Specifics About This Infrastructure</h1>
+<h2>Specifics About This Infrastructure</h2>
 
 <b>What a server is.\</b>
 A server is a computer hardware or software that provides services to other computers, usually called clients.
