@@ -1,3 +1,4 @@
+#!/usr/bin/pip
 # installs the package puppet-lint
 package { 'python3-pip':
   ensure   => installed,
