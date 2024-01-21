@@ -1,11 +1,9 @@
-#!/usr/bin/env bash
-# connect with puppet
-file_line { 'Declare_identity_file':
-  path    => '/etc/ssh/ssh_config',
-  line    => 'IdentityFile ~/.ssh/holberton',
+# Client configuration file (w/ Puppet)
+file_line { 'Identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
 }
-
-file_line { 'Turn_off_passwd_auth':
-  path    => '/etc/ssh/ssh_config',
-  line    => 'PasswordAuthentication no',
-}
+file_line { 'disable password login':
+    path    => '/etc/ssh/ssh_config',
+    line    => '    PasswordAuthentication no',
