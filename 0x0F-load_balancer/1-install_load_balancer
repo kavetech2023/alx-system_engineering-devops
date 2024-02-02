@@ -42,4 +42,3 @@ listen hbnb
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
-echo "Configured backend servers: web-01, web-02"
