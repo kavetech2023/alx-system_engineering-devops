@@ -1,4 +1,4 @@
-<h1>ALX System Engineering & DevOps: Your Learning Journey</h1>
+<h1>ALX System Engineering & DevOps</h1>
 
 This repository showcases my learning in System Engineering and DevOps, covering essential skills like Bash, Scripting, Web Stack/Debugging, Networking & Security, and CI/CD
 
