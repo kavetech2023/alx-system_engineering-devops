@@ -20,3 +20,9 @@ This repository showcases my learning in System Engineering and DevOps, covering
 
 * Basic understanding of computers and Linux/Unix systems.
 * Willingness to experiment and learn through hands-on practice.
+
+<h2>Additional Information:</h2>
+
+* __Author:__ Kevin Kavete
+* __License:__
+* __Dependencies:__
