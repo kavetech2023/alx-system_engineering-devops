@@ -1,28 +1,36 @@
 #!/usr/bin/env bash
-# Recdirect 404 error to a custom file whit the string Ceci n'est pas une page.
-
+# Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 apt-get update
 apt-get install -y nginx
+ufw allow 'Nginx HTTP'
+touch /var/www/html/index.html
+echo "Hello World!" >/var/www/html/index.html
+touch /var/www/html/404.html
+echo "Ceci n'est pas une page" >/var/www/html/404.html
+hostname="$(hostname)"
+echo "
+server {
+        listen 80;
+        listen [::]:80;
 
-# Create default page
-echo "Hello World!" > /var/www/html/index.html
+        server_name _;
 
-# Firewall Configurate server
-#ufw allow 'Nginx HTTP'
+        error_page 404 /404.html;
+        add_header X-Served-By $hostname;
 
-f_config="/etc/nginx/sites-available/default"
+        location / {
+            root /var/www/html;
+            index index.html;
+        }
 
-#add Header
-sed -i "/listen 80 default_server/a add_header X-Served-By \"$HOSTNAME\";" $f_config
+        location /redirect_me {
+            return 301 https://www.github.com/kavetech2023;
+        }
 
-# Add redirection
-new_site="https://github.com/kavetech2023"
-sed -i "/listen 80 default_server/a rewrite ^/redirect_me $new_site permanent;" $f_config
-
-# Add 404 redirection
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/my_404.html
-new_404="my_404.html"
-l_new_404="/my_404.html {root /usr/share/nginx/html;\n internal;}"
-sed -i "/listen 80 default_server/a error_page 404 /$new_404; location = $l_new_404" $f_config
-
+        location /404 {
+            root /var/www/html;
+            internal;
+        }
+}
+" >/etc/nginx/sites-available/default
 service nginx restart
