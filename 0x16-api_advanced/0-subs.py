@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-"""Function to query subscribers on a given Reddit subreddit."""
 import requests
 import json
 
@@ -8,10 +7,16 @@ def number_of_subscribers(subreddit):
     """Return the total number of subscribers on a given subreddit."""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-        "User-Agent": "linux:0x16.api.advanced:v1.0.0 (by /u/kavete)"
+        "User-Agent": "Python script (by /u/your_username) v1.0.0"  # Replace with your Reddit username
     }
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    response = requests.get(url, headers=headers)  # Allow redirects for potential API endpoint changes
+
     if response.status_code == 404:
         return 0
-    results = response.json().get("data")
-    return results.get("subscribers")
+
+    try:
+        results = response.json().get("data")
+        return results.get("subscribers")
+    except json.JSONDecodeError:
+        print("Error: Invalid JSON response received.")
+        return None
