@@ -7,7 +7,7 @@ def number_of_subscribers(subreddit):
     """Return the total number of subscribers on a given subreddit."""
     url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
     headers = {
-        "User-Agent": "Python script (by /u/your_username) v1.0.0"  # Replace with your Reddit username
+        "User-Agent": "Python script (by /u/kavete) v1.0.0"  # Replace with your Reddit username
     }
     response = requests.get(url, headers=headers)  # Allow redirects for potential API endpoint changes
 
