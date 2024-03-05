@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 "first 10 hot posts"
-
+import json
 import requests
 
 
