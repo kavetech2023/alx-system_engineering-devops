@@ -11,7 +11,7 @@ def number_of_subscribers(subreddit):
     password = 'Reddit72'
     user_pass_dict = {'user': username, 'passwd': password, 'api_type': 'json'}
     headers = {'user-agent': '/u/kavete API Python for ALX'}
-    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    url = 'about.json'
     client = requests.session()
     client.headers = headers
     r = client.get(url, allow_redirects=False)
